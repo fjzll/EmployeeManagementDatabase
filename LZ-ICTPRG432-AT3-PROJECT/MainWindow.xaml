@@ -34,12 +34,16 @@
         <Button x:Name="ShowAllButton" Content="Show All Employees" BorderThickness="1" BorderBrush="Black" FontSize="14" Grid.Column="1" Grid.Row="2" Margin="5" Click="ShowAllButton_Click"/>
         <ListBox x:Name="EmployeeListbox" Grid.Row="2" Grid.Column="2" Grid.RowSpan="7" BorderBrush="Black" BorderThickness="1" Background="LightGray" Margin="5" />
         <Button x:Name= "SearchEmployeeButton" Content="Search by Name" Grid.Column="1" Margin="5" Grid.Row="3" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="SearchEmployeeButton_Click" />
-        <Button x:Name= "SearchEmployeebyBranchButton" Content="Search by Branch" Grid.Column="1" Margin="5" Grid.Row="4" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="SearchEmployeebyBranchButton_Click" />
-        <Button x:Name= "SearchEmployeebySalaryButton" Content="Search by Salary: Enter a minimum salary" Grid.Column="1" Margin="5" Grid.Row="5" FontSize="12" BorderBrush="Black" BorderThickness="1" Click="SearchEmployeebySalaryButton_Click" />
-        <Button x:Name= "AddEmployeeButton" Content="Add Employee" Grid.Column="1" Margin="5" Grid.Row="6" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="AddEmployeeButton_Click"/>
-        <Button x:Name= "DeleteEmployeeButton" Content="Delete Employee" Grid.Column="1" Margin="5" Grid.Row="7" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="DeleteEmployeeButton_Click"/>
-        <Button x:Name= "UpdateEmployeeButton" Content="Update Salary" Grid.Column="1" Margin="5" Grid.Row="8" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="UpdateEmployeeButton_Click"/>
-        <Button x:Name= "ShowSalesButton" Content="Sales Figure" Grid.Column="1" Margin="5" Grid.Row="9" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="ShowSalesButton_Click"/>
-        <DataGrid x:Name="SalesDataGrid" Grid.Row="9" Grid.Column="2" Background="LightGray" BorderBrush="Black" BorderThickness="1" Margin="5" IsReadOnly="True" FontSize="10"/>
+        <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Horizontal">
+            <CheckBox x:Name="branch1CheckBox" Content="Branch 1" VerticalAlignment="Center" Margin="5" FontSize="14" Checked="branch1CheckBox_Checked" Unchecked="branch1CheckBox_Unchecked" />
+            <CheckBox x:Name="branch2CheckBox" Content="Branch 2" VerticalAlignment="Center" Margin="5" FontSize="14" Checked="branch2CheckBox_Checked" Unchecked="branch2CheckBox_Unchecked" />
+            <CheckBox x:Name="branch3CheckBox" Content="Branch 3" VerticalAlignment="Center" Margin="5" FontSize="14" Checked="branch3CheckBox_Checked" Unchecked="branch3CheckBox_Unchecked" />
+        </StackPanel>
+        <Button x:Name= "SearchEmployeebySalaryButton" Content="Search by Salary: Enter a minimum salary" Grid.Column="1" Margin="5" Grid.Row="4" FontSize="12" BorderBrush="Black" BorderThickness="1" Click="SearchEmployeebySalaryButton_Click" />
+        <Button x:Name= "AddEmployeeButton" Content="Add Employee" Grid.Column="1" Margin="5" Grid.Row="5" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="AddEmployeeButton_Click"/>
+        <Button x:Name= "DeleteEmployeeButton" Content="Delete Employee" Grid.Column="1" Margin="5" Grid.Row="6" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="DeleteEmployeeButton_Click"/>
+        <Button x:Name= "UpdateEmployeeButton" Content="Update Salary" Grid.Column="1" Margin="5" Grid.Row="7" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="UpdateEmployeeButton_Click"/>
+        <Button x:Name= "ShowSalesButton" Content="Sales Figure" Background="LightSeaGreen" Grid.Column="1" Margin="5" Grid.Row="9" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="ShowSalesButton_Click"/>
+        <DataGrid x:Name="SalesDataGrid" Grid.Row="9" Grid.Column="2" Background="LightSeaGreen" BorderBrush="Black" BorderThickness="1" Margin="5" IsReadOnly="True" FontSize="10"/>
     </Grid>
 </Window>
