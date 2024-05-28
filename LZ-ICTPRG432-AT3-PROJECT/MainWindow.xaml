@@ -1,0 +1,45 @@
+﻿<Window x:Class="LZ_ICTPRG432_AT3_PROJECT.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LZ_ICTPRG432_AT3_PROJECT"
+        mc:Ignorable="d"
+        Title="LZ-ICTPRG432-AT3-PROJECT" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="24" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="24" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Image Grid.ColumnSpan="2" Grid.RowSpan="2" Source="/Employee-and-Staff-Management.jpg" Stretch="Fill"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2">
+            <Label Content="Search here: " VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+            <TextBox x:Name="SearchTextbox" Width="380" Text="" Margin="8" TextWrapping="Wrap" FontSize="14" BorderBrush="Black" BorderThickness="1" GotFocus="SearchTextbox_GotFocus" />
+        </StackPanel>
+        <Label Grid.Column="2" Grid.ColumnSpan="2" Content="Incredibly Obvious Technologies Employee Management System" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="16" Foreground="#FF2480E6" FontWeight="Bold" />
+        <Button x:Name="ShowAllButton" Content="Show All Employees" BorderThickness="1" BorderBrush="Black" FontSize="14" Grid.Column="1" Grid.Row="2" Margin="5" Click="ShowAllButton_Click"/>
+        <ListBox x:Name="EmployeeListbox" Grid.Row="2" Grid.Column="2" Grid.RowSpan="7" BorderBrush="Black" BorderThickness="1" Background="LightGray" Margin="5" />
+        <Button x:Name= "SearchEmployeeButton" Content="Search by Name" Grid.Column="1" Margin="5" Grid.Row="3" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="SearchEmployeeButton_Click" />
+        <Button x:Name= "SearchEmployeebyBranchButton" Content="Search by Branch" Grid.Column="1" Margin="5" Grid.Row="4" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="SearchEmployeebyBranchButton_Click" />
+        <Button x:Name= "SearchEmployeebySalaryButton" Content="Search by Salary: Enter a minimum salary" Grid.Column="1" Margin="5" Grid.Row="5" FontSize="12" BorderBrush="Black" BorderThickness="1" Click="SearchEmployeebySalaryButton_Click" />
+        <Button x:Name= "AddEmployeeButton" Content="Add Employee" Grid.Column="1" Margin="5" Grid.Row="6" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="AddEmployeeButton_Click"/>
+        <Button x:Name= "DeleteEmployeeButton" Content="Delete Employee" Grid.Column="1" Margin="5" Grid.Row="7" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="DeleteEmployeeButton_Click"/>
+        <Button x:Name= "UpdateEmployeeButton" Content="Update Salary" Grid.Column="1" Margin="5" Grid.Row="8" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="UpdateEmployeeButton_Click"/>
+        <Button x:Name= "ShowSalesButton" Content="Sales Figure" Grid.Column="1" Margin="5" Grid.Row="9" FontSize="14" BorderBrush="Black" BorderThickness="1" Click="ShowSalesButton_Click"/>
+        <DataGrid x:Name="SalesDataGrid" Grid.Row="9" Grid.Column="2" Background="LightGray" BorderBrush="Black" BorderThickness="1" Margin="5" IsReadOnly="True" FontSize="10"/>
+    </Grid>
+</Window>
