@@ -89,33 +89,6 @@ namespace LZ_ICTPRG432_AT3_PROJECT
             conn.Close();
         }
 
-        private void SearchEmployeebyBranchButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (!(int.TryParse(SearchTextbox.Text, out int branchId)) || branchId < 1 || branchId >3)
-            {
-                MessageBox.Show("Please enter 1, 2  or 3 for branch ID.");
-                return;
-            }
-            string sqlQuery = "Select * from EMPLOYEES where branch_id like '%" + SearchTextbox.Text + "%';";
-            try
-            {
- 
-                EmployeeListbox.Items.Clear();
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(sqlQuery, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    EmployeeListbox.Items.Add($"ID:{rdr["id"]}, Fisrt Name:{rdr["given_name"]}, Last name: {rdr["family_name"]}, Gender:{rdr["gender_identity"]}, Gloss Salary: {rdr["gross_salary"]}, Branch ID: {rdr["branch_id"]}");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            conn.Close();
-        }
-
         private void SearchEmployeebySalaryButton_Click(object sender, RoutedEventArgs e)
         {
             if (!(int.TryParse(SearchTextbox.Text, out int grossSalary)))
@@ -227,6 +200,152 @@ namespace LZ_ICTPRG432_AT3_PROJECT
             conn.Close();
         }
 
+
+
+        private void branch1CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            branch2CheckBox.IsEnabled = false;
+            branch3CheckBox.IsEnabled = false; 
+            string sqlQuery = "SELECT * FROM employees WHERE branch_id = 1;";
+
+            try
+            {
+                EmployeeListbox.Items.Clear();
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    EmployeeListbox.Items.Add($"ID:{rdr["id"]}, Fisrt Name:{rdr["given_name"]}, Last name: {rdr["family_name"]}, Gender:{rdr["gender_identity"]}, Gloss Salary: {rdr["gross_salary"]}, Branch ID: {rdr["branch_id"]}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            conn.Close();
+        }
+
+        private void branch2CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            branch1CheckBox.IsEnabled = false;
+            branch3CheckBox.IsEnabled = false;
+            string sqlQuery = "SELECT * FROM employees WHERE branch_id = 2;";
+            try
+            {
+                EmployeeListbox.Items.Clear();
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    EmployeeListbox.Items.Add($"ID:{rdr["id"]}, Fisrt Name:{rdr["given_name"]}, Last name: {rdr["family_name"]}, Gender:{rdr["gender_identity"]}, Gloss Salary: {rdr["gross_salary"]}, Branch ID: {rdr["branch_id"]}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            conn.Close();
+        }
+
+        private void branch3CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            branch1CheckBox.IsEnabled = false;
+            branch2CheckBox.IsEnabled = false;
+            string sqlQuery = "SELECT * FROM employees WHERE branch_id = 3;";
+            try
+            {
+                EmployeeListbox.Items.Clear();
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    EmployeeListbox.Items.Add($"ID:{rdr["id"]}, Fisrt Name:{rdr["given_name"]}, Last name: {rdr["family_name"]}, Gender:{rdr["gender_identity"]}, Gloss Salary: {rdr["gross_salary"]}, Branch ID: {rdr["branch_id"]}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            conn.Close();
+        }
+
+        private void branch1CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            branch1CheckBox.IsEnabled = true;
+            branch3CheckBox.IsEnabled = true;
+            branch2CheckBox.IsEnabled=true;
+            string sqlQuery = "SELECT * FROM employees;";
+            try
+            {
+                EmployeeListbox.Items.Clear();
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    EmployeeListbox.Items.Add($"ID:{rdr["id"]}, Fisrt Name:{rdr["given_name"]}, Last name: {rdr["family_name"]}, Gender:{rdr["gender_identity"]}, Gloss Salary: {rdr["gross_salary"]}, Branch ID: {rdr["branch_id"]}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            conn.Close();
+        }
+
+
+
+        private void branch2CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            branch1CheckBox.IsEnabled = true;
+            branch3CheckBox.IsEnabled = true;
+            branch2CheckBox.IsEnabled = true;
+            string sqlQuery = "SELECT * FROM employees;";
+            try
+            {
+                EmployeeListbox.Items.Clear();
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    EmployeeListbox.Items.Add($"ID:{rdr["id"]}, Fisrt Name:{rdr["given_name"]}, Last name: {rdr["family_name"]}, Gender:{rdr["gender_identity"]}, Gloss Salary: {rdr["gross_salary"]}, Branch ID: {rdr["branch_id"]}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            conn.Close();
+
+        }
+
+        private void branch3CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            branch1CheckBox.IsEnabled = true;
+            branch3CheckBox.IsEnabled = true;
+            branch2CheckBox.IsEnabled = true;
+            string sqlQuery = "SELECT * FROM employees;";
+            try
+            {
+                EmployeeListbox.Items.Clear();
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    EmployeeListbox.Items.Add($"ID:{rdr["id"]}, Fisrt Name:{rdr["given_name"]}, Last name: {rdr["family_name"]}, Gender:{rdr["gender_identity"]}, Gloss Salary: {rdr["gross_salary"]}, Branch ID: {rdr["branch_id"]}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            conn.Close();
+        }
     }
 
     public class Sales
